@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Salario
@@ -16,7 +17,8 @@ namespace Salario
 
             Console.WriteLine("digite o salario do mes");
             sal =  Convert.ToDouble(Console.ReadLine());
-           
+
+            carregando();
 
             Console.WriteLine("digite H para saber o salario por hora");
             Console.WriteLine("digite D para saber o salario por dia");
@@ -44,6 +46,12 @@ namespace Salario
        public static double hora(double salMes) => salMes / (160);
         
        public static double ano(double salMes)  => salMes * 12;
+
+        public static void carregando()
+        {
+            Console.WriteLine("\nloading...\n");
+            Thread.Sleep(1000);
+        }
    
     }
 }
